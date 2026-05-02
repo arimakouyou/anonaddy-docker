@@ -102,7 +102,7 @@ RUN apk --no-cache add -t build-dependencies \
   && git fetch --depth 1 origin "v${ANONADDY_VERSION}" && git checkout -q FETCH_HEAD \
   && composer install --optimize-autoloader --no-dev --no-interaction --no-ansi --ignore-platform-req=php-64bit \
   && chown -R anonaddy:anonaddy /var/www/anonaddy \
-  && npm ci --ignore-scripts \
+  && npm install --ignore-scripts --no-audit --no-fund \
   && APP_URL=https://addy-sh.test npm run production \
   && npm prune --production \
   && chown -R nobody:nogroup /var/www/anonaddy \
