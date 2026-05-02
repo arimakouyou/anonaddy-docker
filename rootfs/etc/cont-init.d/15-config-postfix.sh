@@ -104,7 +104,7 @@ smtpd_data_restrictions = reject_unauth_pipelining
 
 disable_vrfy_command = yes
 strict_rfc821_envelopes = yes
-maillog_file = /dev/stdout
+maillog_file = /var/log/mail.log
 EOL
 
 if [ -n "$SMTPD_MILTERS" ]; then
